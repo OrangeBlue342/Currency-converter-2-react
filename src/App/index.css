@@ -1,0 +1,12 @@
+#root {
+  font-family: 'Lucida Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-image: url(images/monety.jpg);
+  background-size: auto;
+  background-repeat: repeat;
+  background-attachment: fixed;
+};
