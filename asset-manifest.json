@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/OrangeBlue342/Currency-converter-2-react.git/static/css/main.c10a40e0.css",
-    "main.js": "/OrangeBlue342/Currency-converter-2-react.git/static/js/main.ef479350.js",
-    "static/js/453.f6c12b2c.chunk.js": "/OrangeBlue342/Currency-converter-2-react.git/static/js/453.f6c12b2c.chunk.js",
-    "static/media/monety.jpg": "/OrangeBlue342/Currency-converter-2-react.git/static/media/monety.b38e5d0abdde0cc53d9a.jpg",
-    "index.html": "/OrangeBlue342/Currency-converter-2-react.git/index.html",
-    "main.c10a40e0.css.map": "/OrangeBlue342/Currency-converter-2-react.git/static/css/main.c10a40e0.css.map",
-    "main.ef479350.js.map": "/OrangeBlue342/Currency-converter-2-react.git/static/js/main.ef479350.js.map",
-    "453.f6c12b2c.chunk.js.map": "/OrangeBlue342/Currency-converter-2-react.git/static/js/453.f6c12b2c.chunk.js.map"
+    "main.css": "/Currency-converter-2-react/static/css/main.9acdc535.css",
+    "main.js": "/Currency-converter-2-react/static/js/main.6462d224.js",
+    "static/js/453.f6c12b2c.chunk.js": "/Currency-converter-2-react/static/js/453.f6c12b2c.chunk.js",
+    "static/media/monety.jpg": "/Currency-converter-2-react/static/media/monety.b38e5d0abdde0cc53d9a.jpg",
+    "index.html": "/Currency-converter-2-react/index.html",
+    "main.9acdc535.css.map": "/Currency-converter-2-react/static/css/main.9acdc535.css.map",
+    "main.6462d224.js.map": "/Currency-converter-2-react/static/js/main.6462d224.js.map",
+    "453.f6c12b2c.chunk.js.map": "/Currency-converter-2-react/static/js/453.f6c12b2c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c10a40e0.css",
-    "static/js/main.ef479350.js"
+    "static/css/main.9acdc535.css",
+    "static/js/main.6462d224.js"
   ]
 }
