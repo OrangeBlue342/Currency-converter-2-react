@@ -10,9 +10,13 @@ Technologies:
 3. JavaScript
 4. React
 
-![Logo aplikacji](src/App/images/share2.png)
+<img src="src/App/images/share2.png" width="200" height="200">
 
 ![Widok aplikacji](src/App/images/Zrzut%20ekranu.png)
+
+## Demo
+[View the application](https://orangeblue342.github.io/Currency-converter-2-react/)
+
 ## Available Scripts
 
 In the project directory, you can run:
