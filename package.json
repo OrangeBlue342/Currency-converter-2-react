@@ -2,7 +2,7 @@
   "name": "currency-converter-2-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://orangeblue342.github.io/Currency-converter-2-react",
+  "homepage": "https://orangeblue342.github.io/Currency-converter-2-react/",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",
