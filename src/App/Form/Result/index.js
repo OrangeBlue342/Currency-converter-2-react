@@ -1,7 +1,7 @@
-import "./style.css";
+import {Wrapper} from "./styled";
 
 export const Result = ({ result }) => (
-    <p className="result"> Wynik (PLN):
+    <Wrapper> Wynik (PLN):
         {!!result && (
             <>
                 {result.sourceAmount.toFixed(2)}&nbsp;PLN&nbsp;=
@@ -11,5 +11,5 @@ export const Result = ({ result }) => (
                 </strong>
             </>
         )}
-    </p>
+    </Wrapper>
 );

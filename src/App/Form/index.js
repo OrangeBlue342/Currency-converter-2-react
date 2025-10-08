@@ -1,7 +1,7 @@
  import React, { useState } from "react";
 import { currencies } from "../currencies";
 import { Result } from "./Result";
-import "./style.css";
+import { LabelText, Formfield, Fieldset, Legend, Value, Calcule } from "./styled";
 
 export const Form = () => {
     const [currency, setCurrency] = useState(currencies[0].short);
@@ -34,14 +34,14 @@ export const Form = () => {
     };
 
     return (
-    <form className="form" onSubmit={onSubmit}>
+    <Formfield onSubmit={onSubmit}>
     
-        <fieldset className="fieldset">
-            <h2 className="fieldset_legend">Kalkulator walut</h2>
+        <Fieldset>
+            <Legend>Kalkulator walut</Legend>
             <p>Poznaj aktualne kursy złotego</p>
             <p>
             <label>
-                <span className="form_labelText">Kwota</span>
+                <LabelText>Kwota</LabelText>
                     <input 
                     value={amount}
                     onChange={({ target }) => setAmount(target.value)}
@@ -55,7 +55,7 @@ export const Form = () => {
                     </p>
                     <p>
                     <label> 
-                        <span className="value">Waluta</span>
+                        <Value>Waluta</Value>
                 <select  
                 value={currency}
                         onChange={({ target }) => setCurrency(target.value)}>
@@ -67,13 +67,13 @@ export const Form = () => {
                 </select>
             </label>
         </p>
-    </fieldset>
+    </Fieldset>
         <p>
-            <button type="submit" className="calcule">Przelicz</button>
+            <Calcule type="submit">Przelicz</Calcule>
         </p>
         {result && <Result result={result} />}
 
-</form>); 
+</Formfield>); 
 };
 
 export default Form;

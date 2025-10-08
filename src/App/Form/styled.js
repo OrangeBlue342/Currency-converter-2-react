@@ -1,24 +1,13 @@
-.fieldset {
-    border:none;
-    text-align: center;
-}
+import styled from 'styled-components';
 
-.fieldset_legend {
-    font-size: 2em;
-    text-align: center;
-    padding-top: 30px;
-}
-
-.form_labelText {
+export const LabelText = styled.span`
     max-width: 60px;
     width: 100%;
     display: inline-block;
     padding-bottom: 10px;
-    
-}
+`;
 
-
-.form {
+export const Formfield = styled.form`
     width: 600px;
     height: 450px;
     margin: 50px auto;
@@ -31,13 +20,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+`;
 
-.value {
-    padding-right: 10px;
-}
+export const Fieldset = styled.fieldset`
+    border:none;
+    text-align: center;
+`;
 
-.calcule {
+export const Legend = styled.h2`
+    font-size: 2em;
+    text-align: center;
+    padding-top: 30px;
+`;
+
+export const Value = styled.span`
+padding-right: 10px;
+`;
+
+export const Calcule = styled.button`
     width: 100px;
     border: none;
     font-size: medium;
@@ -47,12 +47,8 @@
     text-align: center;
     color: aliceblue;
     padding: 10px;
-}
 
-.calcule:hover {
-    background-color: rgb(49, 49, 253);
-}
+    &:hover {background-color: rgb(49, 49, 253);};
 
-.calcule:active {
-    background-color: rgb(89, 89, 237);
-}
+    &:active { background-color: rgb(89, 89, 237);};
+`;
