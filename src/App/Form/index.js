@@ -1,5 +1,6 @@
  import React, { useState } from "react";
 import { currencies } from "../currencies";
+import {Clock} from  "./Clock";
 import { Result } from "./Result";
 import { LabelText, Formfield, Fieldset, Legend, Value, Calcule } from "./styled";
 
@@ -35,7 +36,7 @@ export const Form = () => {
 
     return (
     <Formfield onSubmit={onSubmit}>
-    
+    <Clock/>
         <Fieldset>
             <Legend>Kalkulator walut</Legend>
             <p>Poznaj aktualne kursy złotego</p>
