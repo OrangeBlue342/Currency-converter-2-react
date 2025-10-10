@@ -9,6 +9,8 @@ Technologies:
 2. CSS
 3. JavaScript
 4. React
+5. Styled-components
+6. Custom Hooks
 
 <img src="src/App/images/share2.png" width="200" height="200">
 
