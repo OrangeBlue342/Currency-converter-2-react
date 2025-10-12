@@ -11,5 +11,9 @@ html {
   box-sizing: inherit;
 };
 
-`;
+body {
+ margin: 0;
+  
+}
 
+`;
