@@ -2,37 +2,38 @@ import React, { useState } from "react";
 import { currencies } from "../currencies";
 import {Clock} from  "./Clock";
 import { Result } from "./Result";
-import { LabelText, Formfield, Fieldset, Legend, Value, Calcule } from "./styled";
+import { LabelText, 
+         Formfield, 
+         Fieldset, 
+         Legend, 
+         Value, 
+         Calcule } from "./styled";
+
+import { useRatesData } from "./useRatesData";
 
 export const Form = () => {
-    const [currency, setCurrency] = useState(currencies[0].short);
-    const [amount, setAmount] = useState("");
-    const [result, setResult] = useState(null); 
+    const [result, setResult] = useState(null);
+    const ratesData = useRatesData() 
 
     const calculateResult = (currency, amount) => {
-        const rate = currencies.find(({ short }) => short === currency)?.rate;
+        const rate = ratesData.rates[currency];
 
-        if (!rate) {
-            console.error("Nie znaleziono kursu dla wybranej waluty.");
-            return;
-        }
-
-        if (amount <= 0) {
-            console.error("Kwota musi być większa niż zero.");
-            return;
-        }
 
         setResult({
             sourceAmount: +amount,
-            targetAmount: amount / rate,
+            targetAmount: amount * rate,
             currency,
         });
     };
+
+    const [currency, setCurrency] = useState();
+    const [amount, setAmount] = useState("");
 
     const onSubmit = (event) => {
         event.preventDefault();
         calculateResult(currency, amount);
     };
+        
 
     return (
     <Formfield onSubmit={onSubmit}>
@@ -40,41 +41,58 @@ export const Form = () => {
         <Fieldset>
             <Legend>Kalkulator walut</Legend>
             <p>Poznaj aktualne kursy złotego</p>
+            
+            {ratesData.state === "loading" 
+            ? (
+                <p>
+                 Seundka ...<br />Ładuję kursy walut z Europejskiego Banku Centralnego
+                </p>
+            )
+        
+            : ratesData.state === "error" ? (
+                <p>
+                    Hmmm... Coś poszło nie tak. Spróbuj ponownie później.
+                </p>
+            ) : (
+             <>
             <p>
             <label>
                 <LabelText>Kwota</LabelText>
                     <input 
                     value={amount}
-                    onChange={({ target }) => setAmount(target.value)}
-                    className="Numbertoconverse" 
                     placeholder="Wpisz kwotę w PLN"
                     type="number"
                     required 
                     step="any" 
-                    min="1"/>
+                    min="1"
+                    onChange={({ target }) => setAmount(target.value)}
+                    />
+                    {!!ratesData.rates && Object.keys(ratesData.rates).map(((currency) => (
+                        <option 
+                        key={currency} 
+                        value={currency}>
+                        </option>
+                    )))}
+                    
                     </label>
                     </p>
                     <p>
                     <label> 
                         <Value>Waluta</Value>
-                <select  
-                value={currency}
-                        onChange={({ target }) => setCurrency(target.value)}>
-                     {currencies.map((currency) => (
-                            <option key={currency.short} value={currency.short}>
-                                {currency.name}
-                            </option>
-                        ))}
-                </select>
+                
             </label>
         </p>
+        </>
+         )}
     </Fieldset>
+   
         <p>
             <Calcule type="submit">Przelicz</Calcule>
         </p>
         {result && <Result result={result} />}
 
 </Formfield>); 
+ 
 };
 
 export default Form;
