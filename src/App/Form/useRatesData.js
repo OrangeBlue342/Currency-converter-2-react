@@ -9,19 +9,19 @@ export const useRatesData = () => {
     useEffect(() => {
         const fetchRates = async () => {
             try {
-                const response = await fetch("currency-converter-2-react/public/currencies.json");
+                const response = await fetch("currency-converter-2-react/currencies.json");
            
            if (!response.ok) {
             throw new Error(response.statusText);
            }
 
-           const data = await response.json();
+           const {data, meta} = await response.json();
            console.log(data);
 
               setRatesData({
                 state: "success",
-                rates: value,
-                date: data,
+                rates: data,
+                date: meta,
               });
 
             } catch {

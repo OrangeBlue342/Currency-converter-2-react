@@ -21,12 +21,12 @@ export const Form = () => {
 
         setResult({
             sourceAmount: +amount,
-            targetAmount: amount * rate[currency],
+            targetAmount: amount / rate[currency],
             currency,
         });
     };
 
-    const [currency] = useState();
+    const [currency, setCurrency] = useState();
     const [amount, setAmount] = useState("");
 
     const onSubmit = (event) => {
@@ -67,7 +67,11 @@ export const Form = () => {
                     min="1"
                     onChange={({ target }) => setAmount(target.value)}
                     />
-                     <select>
+                     <select
+                     as="select"
+                     value={currency}
+                     onChange={({ target }) => setCurrency(target.value)}
+                     >
                     {!!ratesData.rates && Object.keys(ratesData.rates).map(((currency) => (
                       
                        <option 

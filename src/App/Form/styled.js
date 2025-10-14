@@ -35,6 +35,7 @@ export const Legend = styled.h2`
 
 export const Value = styled.span`
 padding-right: 10px;
+
 `;
 
 export const Calcule = styled.button`
