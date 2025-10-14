@@ -16,7 +16,7 @@ export const useRatesData = () => {
            }
 
            const {data, meta} = await response.json();
-           console.log(data);
+           
 
               setRatesData({
                 state: "success",

@@ -16,17 +16,17 @@ export const Form = () => {
     const ratesData = useRatesData() 
 
     const calculateResult = (currency, amount) => {
-        const rate = ratesData.rates[currency];
+        const rate = ratesData.rates[currency].value;
 
 
         setResult({
             sourceAmount: +amount,
-            targetAmount: amount / rate[currency],
+            targetAmount: amount / rate,
             currency,
         });
     };
 
-    const [currency, setCurrency] = useState();
+    const [currency, setCurrency] = useState("EUR");
     const [amount, setAmount] = useState("");
 
     const onSubmit = (event) => {
@@ -67,6 +67,11 @@ export const Form = () => {
                     min="1"
                     onChange={({ target }) => setAmount(target.value)}
                     />
+                    </label>
+                    </p>
+                        <label>
+                        
+                             <Value>Waluta </Value>
                      <select
                      as="select"
                      value={currency}
@@ -83,11 +88,12 @@ export const Form = () => {
                     )))}
                      </select>
                     
-                    </label>
-                    </p>
+                     </label>
+                    
+                    
                     <p>
                     <label> 
-                        <Value>Waluta</Value>
+                       
                 
             </label>
         </p>
