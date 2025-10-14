@@ -9,18 +9,19 @@ export const useRatesData = () => {
     useEffect(() => {
         const fetchRates = async () => {
             try {
-                const response = await fetch('http://api.currencyapi.com/v3/latest?apikey=cur_live_wAhEQSa3g3gSNXiEYw0mOOAajAjYdsUhj7ENhJkS&currencies=EUR%2CUSD%2CCHF%2CGBP&base_currency=PLN');
+                const response = await fetch("currency-converter-2-react/public/currencies.json");
            
            if (!response.ok) {
             throw new Error(response.statusText);
            }
 
-           const {code, values} = await response.json();
+           const data = await response.json();
+           console.log(data);
 
               setRatesData({
                 state: "success",
-                code,
-                values,
+                rates: value,
+                date: data,
               });
 
             } catch {
@@ -35,3 +36,5 @@ export const useRatesData = () => {
 
     return ratesData;
 };
+
+

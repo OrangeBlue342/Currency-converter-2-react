@@ -16,12 +16,12 @@ export const Form = () => {
     const ratesData = useRatesData() 
 
     const calculateResult = (currency, amount) => {
-        const value = ratesData.values[currency];
+        const rate = ratesData.rates[currency];
 
 
         setResult({
             sourceAmount: +amount,
-            targetAmount: amount * value,
+            targetAmount: amount * rate[currency],
             currency,
         });
     };
@@ -57,7 +57,7 @@ export const Form = () => {
              <>
             <p>
             <label>
-                <LabelText>Kwota</LabelText>
+                <LabelText>Kwota </LabelText>
                     <input 
                     value={amount}
                     placeholder="Wpisz kwotę w PLN"
@@ -67,12 +67,17 @@ export const Form = () => {
                     min="1"
                     onChange={({ target }) => setAmount(target.value)}
                     />
-                    {!!ratesData.values && Object.keys(ratesData.values).map(((currency) => (
-                        <option 
+                     <select>
+                    {!!ratesData.rates && Object.keys(ratesData.rates).map(((currency) => (
+                      
+                       <option 
                         key={currency} 
                         value={currency}>
+                            {currency}
                         </option>
+                       
                     )))}
+                     </select>
                     
                     </label>
                     </p>
@@ -96,3 +101,5 @@ export const Form = () => {
 };
 
 export default Form;
+
+
