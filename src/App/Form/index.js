@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { currencies } from "../currencies";
+
 import {Clock} from  "./Clock";
 import { Result } from "./Result";
 import { LabelText, 
@@ -16,17 +16,17 @@ export const Form = () => {
     const ratesData = useRatesData() 
 
     const calculateResult = (currency, amount) => {
-        const rate = ratesData.rates[currency];
+        const value = ratesData.values[currency];
 
 
         setResult({
             sourceAmount: +amount,
-            targetAmount: amount * rate,
+            targetAmount: amount * value,
             currency,
         });
     };
 
-    const [currency, setCurrency] = useState();
+    const [currency] = useState();
     const [amount, setAmount] = useState("");
 
     const onSubmit = (event) => {
@@ -67,7 +67,7 @@ export const Form = () => {
                     min="1"
                     onChange={({ target }) => setAmount(target.value)}
                     />
-                    {!!ratesData.rates && Object.keys(ratesData.rates).map(((currency) => (
+                    {!!ratesData.values && Object.keys(ratesData.values).map(((currency) => (
                         <option 
                         key={currency} 
                         value={currency}>
