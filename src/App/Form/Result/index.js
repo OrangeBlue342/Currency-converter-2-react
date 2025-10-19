@@ -4,7 +4,7 @@ export const Result = ({ result }) => (
     <Wrapper> Wynik (PLN):
         {!!result && (
             <>
-                {result.sourceAmount.toFixed(2)}&nbsp;PLN&nbsp;=
+                {result.sourceAmount.toFixed(2)}&nbsp;PLN&nbsp;=_ 
                 {" "}
                 <strong>
                     {result.targetAmount.toFixed(2)}&nbsp;{result.currency}

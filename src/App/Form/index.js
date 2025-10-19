@@ -67,36 +67,29 @@ export const Form = () => {
                     min="1"
                     onChange={({ target }) => setAmount(target.value)}
                     />
-                    </label>
-                    </p>
-                        <label>
-                        
-                             <Value>Waluta </Value>
-                     <select
-                     as="select"
-                     value={currency}
-                     onChange={({ target }) => setCurrency(target.value)}
-                     >
+            </label>
+            </p>
+            <label>
+                <Value>Waluta </Value>
+                    <select
+                    as="select"
+                    value={currency}
+                    onChange={({ target }) => setCurrency(target.value)}
+                    >
                     {!!ratesData.rates && Object.keys(ratesData.rates).map(((currency) => (
-                      
                        <option 
                         key={currency} 
                         value={currency}>
                             {currency}
                         </option>
-                       
                     )))}
-                     </select>
-                    
-                     </label>
-                    
-                    
-                    <p>
-                    <label> 
-                       
-                
+                    </select>
             </label>
-        </p>
+            <p>
+                <label> 
+                Kursy zostały pobrane ze strony <a href="https://currencyapi.com">currencyapi.com</a> 14.10.2025 r.
+                </label>
+            </p>
         </>
          )}
     </Fieldset>
